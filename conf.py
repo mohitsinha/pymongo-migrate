@@ -13,15 +13,16 @@ read_db_auth = False
 read_db_uname = 'uname'
 read_db_pwd = '12345678'
 
+# This supports reading and writing from/to keys using dot operator
 migrate_conf = [
     {
         'read_collection_name': 'Collection_Read',
         'write_collection_name': 'Collection_Write',
         'fields_map_from_to': [
             ('_id', '_id'),
-            ('name', 'fullName'),
-            ('mobileNo', 'mobile'),
-            ('emailId', 'email'),
+            ('name.fullName', 'fullName'),
+            ('mobileNo', 'contact.mobile'),
+            ('emailId', 'contact.email'),
             ('createdAt', 'createdAt'),
             ('type', 'type'),
         ],
